@@ -54,3 +54,38 @@
 ```bash
     ping google.com
 ```
+## Paso 5. Crear un contenedor con el nombre 'dam_alp2'. ¿Puedes hacer ping entre los contenedores?
+
+-Crear contenedor dam_alp2:
+
+```bash
+    docker run --name dam_alp2 -d alpine
+```
+-Hacer un ping usando el contenedor dam_alp2::
+
+```bash
+    docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' dam_alp2
+```
+-Acceder al contenedor dam_alp1:
+
+```bash
+   docker exec -it dam_alp1 sh
+```
+-Dentro del contenedor dam_alp1 escribiremos este comando:
+
+```bash
+    ping [IP_DE_dam_alp2]
+```
+* Donde pone IP_DE_dam_alp2, escribimos la ip de dam_alp2
+
+## Paso 6. Sal del terminal. ¿Qué ocurrió con el contenedor?
+
+-Salir del terminal dentro del contenedor:
+
+```bash
+    exit
+```
+* Si dentro del contenedor estás imprimiendo la ip de dam_alp2, primero tienes que parar esse proceso, para poder salir del contenedor.
+
+
+
