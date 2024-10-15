@@ -87,5 +87,17 @@
 ```
 * Si dentro del contenedor estás imprimiendo la ip de dam_alp2, primero tienes que parar esse proceso, para poder salir del contenedor.
 
+## Paso 7. ¿Cuánta memoria en el disco duro ocupaste?
 
+-Memoria ocupada: 
+
+```bash
+    docker system df
+```
+
+## Paso 8. ¿Cuánta RAM ocupan los contenedores? ¿Hay algún comando Docker para saber esto?
+
+```bash
+    docker stats
+```
 
